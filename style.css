@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th{
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.firstCol{
+    width: 4%;
+}
+
+.dataCol{
+    width: 8%;
+}
+
+.settings{
+    display: inline-block;
+    width: 15%;
+    /*min-width: 200px;*/
+    background-color: lightblue;
+    height: 100vh;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.content{
+    display: inline-block;
+    vertical-align: top;
+    width: 79%;
+    height: 100vh;
+/*  min-width: calc(100vw-200px);
+    background-color: lightgray;*/
+}
