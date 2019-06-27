@@ -24,11 +24,11 @@ td, th{
 .settings{
     display: inline-block;
     width: 15%;
-    /*min-width: 200px;*/
     background-color: lightblue;
     height: 100vh;
     padding-top: 20px;
     padding-left: 20px;
+/*    font-size: 30px;*/
 }
 
 .content{
@@ -36,6 +36,19 @@ td, th{
     vertical-align: top;
     width: 79%;
     height: 100vh;
-/*  min-width: calc(100vw-200px);
-    background-color: lightgray;*/
+}
+
+select{
+    width: 90%;
+    font-size: 20px;
+}
+
+.button{
+    width: 90%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.checkbox{
+    width: 20%;
 }

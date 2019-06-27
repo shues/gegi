@@ -87,15 +87,14 @@ class pChartLib{
         if(isSet($_GET['gt'])){
             $this->GraphType = $_GET['gt'];
         }else{
-//            $this->GraphType = "cubicCurve";
-            $this->GraphType = "bar";
+            $this->GraphType = "cubicCurve";
         }
     }
 
     private function setData(){
-//        echo "set\n";
         $dm = new DataModule();
-        $sd = $dm->pChartSeriesData();
+        $sd = $dm->getRows();
+        print_r($sd);
         $labels = $dm->pChartLabelsData();
 
         $this->DataSet = new pData();
@@ -104,7 +103,7 @@ class pChartLib{
         }
         $this->DataSet->AddPoint($labels,"months");
         $this->DataSet->AddAllSeries();
-        $this->DataSet->SetAbsciseLabelSerie();
+//        $this->DataSet->SetAbsciseLabelSerie();
         $this->DataSet->SetAbsciseLabelSerie("months");
     }
 

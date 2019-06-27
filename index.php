@@ -1,11 +1,6 @@
 <?php
-
-    require_once('DataModule.php');
-    $dm = new DataModule();
-    $graphTypes = [];
-
-    $graphTypes['cubicCurve'] = 'Cubic curve';
-    $graphTypes['overlayBar'] = 'Overlay bar';
+    require_once('BildElems.php');
+    $be = new BildElems();
 
 
 ?>
@@ -19,31 +14,17 @@
     <body>
         <div class="settings">
             <form action="index.php" method="GET">
-                <select class="graphType" name="graphType">
-                    <?php
-                        forEach($graphTypes as $key=>$value){
-                            $opt = '<option value="'.$key.'"';
-                            if(isSet($_GET['graphType'])){
-                                if($_GET['graphType'] == $key){
-                                    $opt .= " selected>";
-                                }else{
-                                    $opt .= ">";
-                                }
-                                $opt .= $value.'</option>';
-                            }
-                            else{
-                                $opt .= ">$value</option>";
-                            }
-                            echo $opt;
-                        }
-                    ?>
+                <?php echo $be->setHeaders(); ?>
+
+                <?php echo $be->setGraphTypes(); ?>
                 </select>
-                <input type="submit" value="bild">
+                <br>
+                <input class="button" type="submit" value="bild">
             </form>
         </div>
         <div class="content">
             <p id="tableCont">
-                <?php echo $dm->buildTable($inpData) ?>
+                <?php echo $be->buildTable() ?>
             </p>
             <p id="graphCont">
             </p>
